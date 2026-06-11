@@ -117,18 +117,10 @@ const AITutorPage = React.lazy(() =>
   })
 );
 const AnalyticsPage = React.lazy(() =>
-  Promise.resolve({
-    default: () => (
-      <PlaceholderPage title="Analytics" icon="📊" description="Track your study hours, retention rate, and growth" />
-    ),
-  })
+  import('./features/analytics/AnalyticsPage').then((m) => ({ default: m.AnalyticsPage }))
 );
 const SearchPage = React.lazy(() =>
-  Promise.resolve({
-    default: () => (
-      <PlaceholderPage title="Search" icon="🔍" description="Search across vocabulary, kanji, grammar, and lessons" />
-    ),
-  })
+  import('./features/search/SearchPage').then((m) => ({ default: m.SearchPage }))
 );
 const ProfilePage = React.lazy(() =>
   import('./features/profile/ProfilePage')
