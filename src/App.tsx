@@ -89,11 +89,7 @@ const QuizPage = React.lazy(() =>
   import('./features/quiz/QuizPage')
 );
 const MockExamPage = React.lazy(() =>
-  Promise.resolve({
-    default: () => (
-      <PlaceholderPage title="Mock Exam" icon="🎓" description="Simulate the real JLPT exam with timed sections" />
-    ),
-  })
+  import('./features/mock-exam/MockExamPage').then((m) => ({ default: m.MockExamPage }))
 );
 const CareerPage = React.lazy(() =>
   Promise.resolve({
@@ -103,11 +99,7 @@ const CareerPage = React.lazy(() =>
   })
 );
 const MiniGamesPage = React.lazy(() =>
-  Promise.resolve({
-    default: () => (
-      <PlaceholderPage title="Mini Games" icon="🎮" description="Learn Japanese through fun puzzle and word games" />
-    ),
-  })
+  import('./features/mini-games/MiniGamesPage').then((m) => ({ default: m.MiniGamesPage }))
 );
 const AITutorPage = React.lazy(() =>
   Promise.resolve({
